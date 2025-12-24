@@ -52,24 +52,24 @@ print(completion)
 With the output below, notice the role which is defined, the model detail which is `gpt-3.5-turbo-0301` and other detail.
 ```json
 {  
-  "choices": \[  
+  "choices": [  
     {  
-      "finish\_reason": "stop",  
+      "finish_reason": "stop",  
       "index": 0,  
       "message": {  
         "content": "The mission of OpenAI is to ensure that artificial intelligence (AI) benefits humanity as a whole, by developing and promoting friendly AI for everyone, researching and mitigating risks associated with AI, and helping shape the policy and discourse around AI.",  
         "role": "assistant"  
       }  
     }  
-  \],  
+  ],  
   "created": 1677751157,  
   "id": "chatcmpl-6pa0TlU1OFiTKpSrTRBbiGYFIl0x3",  
   "model": "gpt-3.5-turbo-0301",  
   "object": "chat.completion",  
   "usage": {  
-    "completion\_tokens": 50,  
-    "prompt\_tokens": 84,  
-    "total\_tokens": 134  
+    "completion_tokens": 50,  
+    "prompt_tokens": 84,  
+    "total_tokens": 134  
   }  
 }
 ```
@@ -85,3 +85,5 @@ With the output below, notice the role which is defined, the model detail which 
 -   **Improved Consistency**: Provides a deterministic input format, leading to more predictable and reliable model performance.
 -   **Enhanced Control**: Allows developers to clearly define system behavior and conversation flow, transforming prompting into a more precise engineering discipline.
 -   **Prompt Injection Mitigation**: By separating user input from system instructions with explicit boundaries, ChatML helps protect against prompt injection attacks, where malicious prompts might override the original system rules.
+
+## Ref : [ChatMl Article by Cobus Greyling](https://cobusgreyling.medium.com/the-introduction-of-chat-markup-language-chatml-is-important-for-a-number-of-reasons-5061f6fe2a85)
