@@ -2,16 +2,20 @@ import pandas as pd
 import glob
 import os
 
-def combine_csv_files(output_filename="combined.csv"):
-    # Get all CSV files in the current directory
-    csv_files = glob.glob("*.csv")
+def combine_csv_files(output_filename="aimo50Q&A_sources.csv"):
+    # Explicit list of files to combine
+    files_to_combine = [
+        "20 IMO Questions.csv",
+        "AIMO 1.csv",
+        "AIMO 2.csv",
+        "AIMO 3.csv"
+    ]
     
-    # Filter out the output file if it already exists to avoid reading it back in
-    if output_filename in csv_files:
-        csv_files.remove(output_filename)
+    # Filter to ensure files exist before trying to read
+    csv_files = [f for f in files_to_combine if os.path.exists(f)]
         
     if not csv_files:
-        print("No CSV files found to combine.")
+        print("No specified CSV files found to combine.")
         return
 
     print(f"Found {len(csv_files)} CSV files: {csv_files}")
@@ -36,4 +40,4 @@ def combine_csv_files(output_filename="combined.csv"):
         print(f"Successfully combined {len(dfs)} files into {output_filename} with {len(combined_df)} total rows.")
         
         
-combine_csv_files()# filepath: c:\Users\Lalit\OneDrive\Desktop\projects\kaagle\aimo\50 Question Reference\combine.py
+combine_csv_files()
